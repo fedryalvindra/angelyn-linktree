@@ -4,49 +4,49 @@ import './App.css';
 const socials = [
   {
     name: 'YouTube',
-    desc: 'Watch my latest videos',
+    desc: '',
     icon: '▶',
     url: 'https://www.youtube.com/@angeline_cr',
     color: '#ff4d75',
   },
   {
     name: 'Saweria',
-    desc: 'Send me a little support ☕',
+    desc: '',
     icon: '☕',
     url: 'https://saweria.co/angelyn',
     color: '#ffb547',
   },
   {
     name: 'Sociabuzz',
-    desc: 'Support me on Sociabuzz 💙',
+    desc: '',
     icon: '♡',
     url: 'https://sociabuzz.com/angel_yn/tribe',
     color: '#8cffef',
   },
   {
     name: 'TikTok',
-    desc: 'Daily moments & fun videos',
+    desc: '',
     icon: '♪',
     url: 'https://www.tiktok.com/@angel._.yn',
     color: '#ffffff',
   },
   {
     name: 'Instagram',
-    desc: 'My daily life & photos',
+    desc: '',
     icon: '◎',
     url: 'https://www.instagram.com/angelina_natashaa/',
     color: '#e668a7',
   },
   {
     name: 'Discord',
-    desc: 'Join my community',
+    desc: '',
     icon: '☁',
     url: 'https://discord.com/invite/s6pJv997SK',
     color: '#7289da',
   },
   {
     name: 'Business Inquiries',
-    desc: 'For collaboration & sponsorship',
+    desc: '',
     icon: '✉',
     url: 'mailto:angelinasung04@gmail.com',
     color: '#a78bfa',
@@ -96,16 +96,15 @@ function App() {
               ✨ CONTENT CREATOR
             </span>
 
-            <h1>Hi, I'm Angelyn ♡</h1>
+            <h1>Hi, I'm Angelyn!</h1>
 
             <p className="bio">
-              Just a girl in her gaming world. 🎮
-              <br />
-              Gaming, giggles & good vibes ♡
+              Just a girl in her gaming world 🎮
+
             </p>
 
             <div className="social-count">
-              <span>♡</span> Thank you for being here!
+              Thank you for support!
             </div>
 
           </div>
@@ -148,18 +147,24 @@ function App() {
 
           {/* Footer */}
           <footer>
-            <p>
+            {/* <p>
               Made with <span>♥</span> and a little magic
-            </p>
+            </p> */}
 
             <small>
               © 2026 Angelyn. All rights reserved.
             </small>
+
+            <img
+              src="/billie-logo.png"
+              alt="Billie Eilish Logo"
+              className="billie-logo"
+            />
           </footer>
 
         </main>
 
-        <Chibi />
+        {/* <Chibi /> */}
 
       </div>
     </>
