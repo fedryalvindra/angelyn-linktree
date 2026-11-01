@@ -1,38 +1,752 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: "Poppins", sans-serif;
   min-height: 100vh;
+  background: #130d20;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 55px 20px;
+  isolation: isolate;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background: linear-gradient(135deg, #171026, #321638, #24183f, #11152e);
+
+  overflow: hidden;
+}
+
+/* =========================
+   FLOATING ORBS
+========================= */
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.35;
+
+  filter: blur(55px);
+
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+
+  animation: float 15s ease-in-out infinite alternate;
+}
+
+.orb-1 {
+  width: 300px;
+  height: 300px;
+  background: #ec4899;
+  top: 5%;
+  left: -100px;
+}
+
+.orb-2 {
+  width: 320px;
+  height: 320px;
+  background: #9333ea;
+  right: -120px;
+  top: 35%;
+  animation-delay: -5s;
+}
+
+.orb-3 {
+  width: 250px;
+  height: 250px;
+  background: #6366f1;
+  bottom: -100px;
+  left: 30%;
+  animation-delay: -8s;
+}
+
+/* =========================
+   STARS
+========================= */
+
+.stars {
+  position: absolute;
+  top: 12%;
+  right: 12%;
+
+  color: white;
+  opacity: 0.35;
+  letter-spacing: 15px;
+
+  will-change: opacity;
+  animation: sparkle 5s ease-in-out infinite;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile {
+  text-align: center;
+  margin-bottom: 35px;
+
+  animation: fadeUp 0.8s ease both;
+}
+
+.avatar-wrapper {
+  width: 125px;
+  height: 125px;
+
+  margin: 0 auto 18px;
+  position: relative;
+  padding: 5px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #ff9acb, #c084fc, #818cf8);
+
+  box-shadow: 0 0 25px #e879f940;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 3px solid #25152e;
+}
+
+.online-dot {
+  position: absolute;
+
+  width: 17px;
+  height: 17px;
+
+  background: #4ade80;
+  border: 3px solid #25152e;
+
+  border-radius: 50%;
+
+  bottom: 10px;
+  right: 7px;
+}
+
+.creator-tag {
+  display: inline-block;
+
+  padding: 6px 15px;
+
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+
+  color: #ffc4e2;
+
+  background: #ffffff12;
+  border: 1px solid #ffffff25;
+
+  border-radius: 30px;
+
+  margin-bottom: 14px;
+}
+
+.profile h1 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.bio {
+  color: #d6c8e2;
+
+  font-size: 13px;
+  line-height: 1.9;
+
+  margin-top: 10px;
+}
+
+.social-count {
+  margin-top: 16px;
+
+  font-size: 11px;
+  color: #fbcfe8;
+}
+
+.social-count span {
+  color: #fb82bd;
+}
+
+/* =========================
+   SOCIAL LINKS
+========================= */
+
+.links {
   display: flex;
   flex-direction: column;
+  gap: 13px;
+}
+
+.link-card {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 15px;
+
+  padding: 15px 17px;
+
+  text-decoration: none;
   color: white;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 17px;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+
+  animation: fadeUp 0.6s ease both;
 }
 
-.App-link {
-  color: #61dafb;
+.link-card:hover {
+  transform: translate3d(0, -4px, 0);
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border-color: #f9a8d4;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* =========================
+   SOCIAL ICON
+========================= */
+
+.social-icon {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  border-radius: 13px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 22px;
+
+  color: var(--icon-color);
+  background: #ffffff13;
+}
+
+.link-info {
+  flex: 1;
+}
+
+.link-info h3 {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.link-info p {
+  font-size: 10px;
+  color: #c8b8d4;
+  margin-top: 3px;
+}
+
+/* =========================
+   ARROW
+========================= */
+
+.arrow {
+  font-size: 19px;
+  color: #d8b4fe;
+
+  transition: transform 0.3s ease;
+}
+
+.link-card:hover .arrow {
+  transform: translate3d(3px, -3px, 0);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+  margin-top: 38px;
+  color: #c9b8d4;
+}
+
+footer p {
+  font-size: 11px;
+}
+
+footer span {
+  color: #fb82bd;
+}
+
+footer small {
+  display: block;
+  font-size: 9px;
+  margin-top: 7px;
+  opacity: 0.6;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes float {
+  0% {
+    transform: translate3d(0, 0, 0);
   }
+
+  100% {
+    transform: translate3d(30px, -25px, 0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.65;
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 480px) {
+  .page {
+    padding: 45px 22px;
+  }
+
+  .profile h1 {
+    font-size: 26px;
+  }
+
+  .orb {
+    filter: blur(45px);
+  }
+}
+
+/* =========================
+   TOUCH DEVICES
+========================= */
+
+@media (hover: none) {
+  .link-card:hover {
+    transform: none;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================
+   CHIBI CHARACTER
+========================= */
+
+.chibi-container {
+  position: fixed;
+  bottom: 25px;
+  right: 30px;
+  width: 130px;
+  height: 190px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: chibiFloat 3s ease-in-out infinite;
+}
+
+/* Character */
+
+.chibi {
+  position: relative;
+  width: 100px;
+  height: 150px;
+}
+
+/* Hair */
+
+.chibi-hair {
+  position: absolute;
+  width: 76px;
+  height: 76px;
+  background: #493047;
+  border-radius: 48% 48% 40% 40%;
+  top: 5px;
+  left: 12px;
+  z-index: 2;
+}
+
+.hair-bang {
+  position: absolute;
+  width: 48px;
+  height: 35px;
+  background: #493047;
+  top: 0;
+  left: 10px;
+  border-radius: 50%;
+  transform: rotate(-10deg);
+}
+
+/* Face */
+
+.chibi-face {
+  position: absolute;
+  width: 65px;
+  height: 63px;
+  background: #ffe0d2;
+  border-radius: 45% 45% 48% 48%;
+  top: 25px;
+  left: 17px;
+  z-index: 3;
+}
+
+.chibi-eye {
+  position: absolute;
+  width: 6px;
+  height: 10px;
+  background: #493047;
+  border-radius: 50%;
+  top: 28px;
+  animation: chibiBlink 4s infinite;
+}
+
+.eye-left {
+  left: 17px;
+}
+
+.eye-right {
+  right: 17px;
+}
+
+.chibi-blush {
+  position: absolute;
+  width: 12px;
+  height: 6px;
+  background: #f59aaa;
+  border-radius: 50%;
+  top: 39px;
+  opacity: 0.7;
+}
+
+.blush-left {
+  left: 5px;
+}
+
+.blush-right {
+  right: 5px;
+}
+
+.chibi-mouth {
+  position: absolute;
+  width: 8px;
+  height: 5px;
+  border-bottom: 2px solid #b45d70;
+  border-radius: 50%;
+  top: 43px;
+  left: 28px;
+}
+
+/* Body */
+
+.chibi-body {
+  position: absolute;
+  top: 83px;
+  left: 26px;
+  z-index: 2;
+}
+
+.chibi-neck {
+  width: 17px;
+  height: 12px;
+  background: #ffe0d2;
+  margin: auto;
+}
+
+.chibi-dress {
+  width: 49px;
+  height: 39px;
+  background: linear-gradient(135deg, #ff9acb, #d78af5);
+  border-radius: 15px 15px 8px 8px;
+  clip-path: polygon(25% 0, 75% 0, 100% 100%, 0 100%);
+}
+
+/* Arms */
+
+.chibi-arm {
+  position: absolute;
+  width: 12px;
+  height: 34px;
+  background: #ffe0d2;
+  border-radius: 20px;
+  top: 86px;
+  z-index: 1;
+}
+
+.arm-left {
+  left: 17px;
+  transform: rotate(25deg);
+}
+
+.arm-right {
+  right: 8px;
+  top: 75px;
+  transform-origin: bottom center;
+  animation: chibiWave 1s ease-in-out infinite alternate;
+}
+
+/* Legs */
+
+.chibi-leg {
+  position: absolute;
+  width: 13px;
+  height: 23px;
+  background: #ffe0d2;
+  border-radius: 10px;
+  top: 120px;
+  z-index: 1;
+}
+
+.leg-left {
+  left: 34px;
+}
+
+.leg-right {
+  right: 30px;
+}
+
+/* Shadow */
+
+.chibi-shadow {
+  position: absolute;
+  width: 65px;
+  height: 12px;
+  background: #00000030;
+  filter: blur(7px);
+  border-radius: 50%;
+  bottom: 5px;
+  animation: chibiShadow 3s ease-in-out infinite;
+}
+
+/* Floating hearts */
+
+.chibi-heart {
+  position: absolute;
+  color: #ff8fc7;
+  font-size: 20px;
+  animation: heartFloat 3s ease-in-out infinite;
+}
+
+.heart-1 {
+  top: 20px;
+  right: 0;
+}
+
+.heart-2 {
+  top: 60px;
+  left: 0;
+  animation-delay: 1s;
+}
+
+.chibi-sparkle {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  color: #ffe5a8;
+  font-size: 18px;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Message */
+
+.chibi-message {
+  position: absolute;
+  bottom: 0;
+  right: 95px;
+  white-space: nowrap;
+  padding: 7px 13px;
+  background: #ffffffdd;
+  color: #c45b9c;
+  border-radius: 15px;
+  font-size: 10px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px #00000020;
+  animation: messageFloat 3s ease-in-out infinite;
+}
+
+/* =========================
+   CHIBI ANIMATIONS
+========================= */
+
+@keyframes chibiFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes chibiWave {
+  from {
+    transform: rotate(-35deg);
+  }
+
+  to {
+    transform: rotate(35deg);
+  }
+}
+
+@keyframes chibiBlink {
+  0%,
+  45%,
+  48%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  46%,
+  47% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes chibiShadow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: scale(0.7);
+    opacity: 0.15;
+  }
+}
+
+@keyframes heartFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(-12px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes messageFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .chibi-container {
+    right: 8px;
+    bottom: 10px;
+    transform: scale(0.8);
+    transform-origin: bottom right;
+  }
+
+  .chibi-message {
+    display: none;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .chibi-container,
+  .chibi *,
+  .chibi-heart,
+  .chibi-shadow,
+  .chibi-message {
+    animation: none !important;
   }
 }
