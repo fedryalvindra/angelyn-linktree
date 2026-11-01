@@ -18,10 +18,10 @@ const socials = [
   },
   {
     name: 'Sociabuzz',
-    desc: 'Support me on Sociabuzz 💚',
+    desc: 'Support me on Sociabuzz 💙',
     icon: '♡',
     url: 'https://sociabuzz.com/angel_yn/tribe',
-    color: '#8cff6b',
+    color: '#8cffef',
   },
   {
     name: 'TikTok',
@@ -55,102 +55,114 @@ const socials = [
 
 function App() {
   return (
-    <div className="page">
+    <>
+      <div className="background-wrapper">
+        <img
+          src="/billie.gif"
+          alt=""
+          className="background-image"
+        />
+        <div className="background-overlay"></div>
+      </div>
 
-      {/* Background */}
-      <div className="background">
+      <div className="page">
+
+        {/* Background */}
+        {/* <div className="background">
         <div className="orb orb-1" />
         <div className="orb orb-2" />
         <div className="orb orb-3" />
 
         <div className="stars stars-1">✦　✧　✦</div>
         <div className="stars stars-2">✧　✦　✧</div>
-      </div>
+        <div className="stars stars-3">✧　✦　✧</div>
+      </div> */}
 
-      <main className="container">
+        <main className="container">
 
-        {/* Profile */}
-        <div className="profile">
+          {/* Profile */}
+          <div className="profile">
 
-          <div className="avatar-wrapper">
-            <img
-              src="/image.png"
-              alt="Angelyn Profile"
-              className="avatar"
-            />
-            <span className="online-dot" />
+            <div className="avatar-wrapper">
+              <img
+                src="/image.png"
+                alt="Angelyn Profile"
+                className="avatar"
+              />
+              <span className="online-dot" />
+            </div>
+
+            <span className="creator-tag">
+              ✨ CONTENT CREATOR
+            </span>
+
+            <h1>Hi, I'm Angelyn ♡</h1>
+
+            <p className="bio">
+              Just a girl in her gaming world. 🎮
+              <br />
+              Gaming, giggles & good vibes ♡
+            </p>
+
+            <div className="social-count">
+              <span>♡</span> Thank you for being here!
+            </div>
+
           </div>
 
-          <span className="creator-tag">
-            ✨ CONTENT CREATOR
-          </span>
+          {/* Social Links */}
+          <div className="links">
 
-          <h1>Hi, I'm Angelyn ♡</h1>
-
-          <p className="bio">
-            Just a girl in her gaming world. 🎮
-            <br />
-            Gaming, giggles & good vibes ♡
-          </p>
-
-          <div className="social-count">
-            <span>♡</span> Thank you for being here!
-          </div>
-
-        </div>
-
-        {/* Social Links */}
-        <div className="links">
-
-          {socials.map((social, index) => (
-            <a
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-card"
-              key={social.name}
-              style={{
-                animationDelay: `${index * 0.12}s`,
-              }}
-            >
-
-              <div
-                className="social-icon"
+            {socials.map((social, index) => (
+              <a
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-card"
+                key={social.name}
                 style={{
-                  '--icon-color': social.color,
+                  animationDelay: `${index * 0.12}s`,
                 }}
               >
-                {social.icon}
-              </div>
 
-              <div className="link-info">
-                <h3>{social.name}</h3>
-                <p>{social.desc}</p>
-              </div>
+                <div
+                  className="social-icon"
+                  style={{
+                    '--icon-color': social.color,
+                  }}
+                >
+                  {social.icon}
+                </div>
 
-              <span className="arrow">↗</span>
+                <div className="link-info">
+                  <h3>{social.name}</h3>
+                  <p>{social.desc}</p>
+                </div>
 
-            </a>
-          ))}
+                <span className="arrow">↗</span>
 
-        </div>
+              </a>
+            ))}
 
-        {/* Footer */}
-        <footer>
-          <p>
-            Made with <span>♥</span> and a little magic
-          </p>
+          </div>
 
-          <small>
-            © 2026 Angelyn. All rights reserved.
-          </small>
-        </footer>
+          {/* Footer */}
+          <footer>
+            <p>
+              Made with <span>♥</span> and a little magic
+            </p>
 
-      </main>
+            <small>
+              © 2026 Angelyn. All rights reserved.
+            </small>
+          </footer>
 
-      <Chibi />
+        </main>
 
-    </div>
+        <Chibi />
+
+      </div>
+    </>
   );
 }
 
@@ -161,14 +173,17 @@ function Chibi() {
       <div className="chibi-heart heart-1">♥</div>
       <div className="chibi-heart heart-2">♡</div>
       <div className="chibi-sparkle">✦</div>
+      <div className="chibi-sparkle sparkle-2">✧</div>
 
       <div className="chibi">
 
         {/* Headphones */}
         <div className="headphone-band" />
+
         <div className="headphone ear-left">
           <span />
         </div>
+
         <div className="headphone ear-right">
           <span />
         </div>
@@ -184,8 +199,10 @@ function Chibi() {
         <div className="chibi-face">
           <div className="chibi-eye eye-left" />
           <div className="chibi-eye eye-right" />
+
           <div className="chibi-blush blush-left" />
           <div className="chibi-blush blush-right" />
+
           <div className="chibi-mouth" />
         </div>
 
@@ -207,8 +224,9 @@ function Chibi() {
 
       <div className="chibi-shadow" />
 
+      {/* Speech Bubble */}
       <div className="chibi-message">
-        Hello semuanyaa! 🎮💚
+        Hello semuanyaa! 🎮💙
         <span className="message-tail" />
       </div>
 
