@@ -170,7 +170,7 @@ function Chibi() {
       <div className="chibi-shadow" />
 
       <div className="chibi-message">
-        Hii gamer! 🎮💕
+        Hello semuanyaa! 🎮💕
         <span className="message-tail" />
       </div>
     </div>
