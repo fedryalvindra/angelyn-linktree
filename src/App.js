@@ -171,72 +171,72 @@ function App() {
   );
 }
 
-function Chibi() {
-  return (
-    <div className="chibi-container">
+// function Chibi() {
+//   return (
+//     <div className="chibi-container">
 
-      <div className="chibi-heart heart-1">♥</div>
-      <div className="chibi-heart heart-2">♡</div>
-      <div className="chibi-sparkle">✦</div>
-      <div className="chibi-sparkle sparkle-2">✧</div>
+//       <div className="chibi-heart heart-1">♥</div>
+//       <div className="chibi-heart heart-2">♡</div>
+//       <div className="chibi-sparkle">✦</div>
+//       <div className="chibi-sparkle sparkle-2">✧</div>
 
-      <div className="chibi">
+//       <div className="chibi">
 
-        {/* Headphones */}
-        <div className="headphone-band" />
+//         {/* Headphones */}
+//         <div className="headphone-band" />
 
-        <div className="headphone ear-left">
-          <span />
-        </div>
+//         <div className="headphone ear-left">
+//           <span />
+//         </div>
 
-        <div className="headphone ear-right">
-          <span />
-        </div>
+//         <div className="headphone ear-right">
+//           <span />
+//         </div>
 
-        {/* Hair */}
-        <div className="chibi-hair">
-          <div className="hair-bang" />
-          <div className="hair-side hair-side-left" />
-          <div className="hair-side hair-side-right" />
-        </div>
+//         {/* Hair */}
+//         <div className="chibi-hair">
+//           <div className="hair-bang" />
+//           <div className="hair-side hair-side-left" />
+//           <div className="hair-side hair-side-right" />
+//         </div>
 
-        {/* Face */}
-        <div className="chibi-face">
-          <div className="chibi-eye eye-left" />
-          <div className="chibi-eye eye-right" />
+//         {/* Face */}
+//         <div className="chibi-face">
+//           <div className="chibi-eye eye-left" />
+//           <div className="chibi-eye eye-right" />
 
-          <div className="chibi-blush blush-left" />
-          <div className="chibi-blush blush-right" />
+//           <div className="chibi-blush blush-left" />
+//           <div className="chibi-blush blush-right" />
 
-          <div className="chibi-mouth" />
-        </div>
+//           <div className="chibi-mouth" />
+//         </div>
 
-        {/* Body */}
-        <div className="chibi-body">
-          <div className="chibi-neck" />
-          <div className="chibi-dress" />
-        </div>
+//         {/* Body */}
+//         <div className="chibi-body">
+//           <div className="chibi-neck" />
+//           <div className="chibi-dress" />
+//         </div>
 
-        {/* Arms */}
-        <div className="chibi-arm arm-left" />
-        <div className="chibi-arm arm-right" />
+//         {/* Arms */}
+//         <div className="chibi-arm arm-left" />
+//         <div className="chibi-arm arm-right" />
 
-        {/* Legs */}
-        <div className="chibi-leg leg-left" />
-        <div className="chibi-leg leg-right" />
+//         {/* Legs */}
+//         <div className="chibi-leg leg-left" />
+//         <div className="chibi-leg leg-right" />
 
-      </div>
+//       </div>
 
-      <div className="chibi-shadow" />
+//       <div className="chibi-shadow" />
 
-      {/* Speech Bubble */}
-      <div className="chibi-message">
-        Hello semuanyaa! 🎮💙
-        <span className="message-tail" />
-      </div>
+//       {/* Speech Bubble */}
+//       <div className="chibi-message">
+//         Hello semuanyaa! 🎮💙
+//         <span className="message-tail" />
+//       </div>
 
-    </div>
-  );
-}
+//     </div>
+//   );
+// }
 
 export default App;
