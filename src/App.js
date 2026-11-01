@@ -10,6 +10,20 @@ const socials = [
     color: '#ff4d75',
   },
   {
+    name: 'Saweria',
+    desc: 'Send me a little support ☕',
+    icon: '☕',
+    url: 'https://saweria.co/angelyn',
+    color: '#ffb547',
+  },
+  {
+    name: 'Sociabuzz',
+    desc: 'Support me on Sociabuzz 💗',
+    icon: '♡',
+    url: 'https://sociabuzz.com/angel_yn/tribe',
+    color: '#ff7b9c',
+  },
+  {
     name: 'TikTok',
     desc: 'Daily moments & fun videos',
     icon: '♪',
