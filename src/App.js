@@ -18,10 +18,10 @@ const socials = [
   },
   {
     name: 'Sociabuzz',
-    desc: 'Support me on Sociabuzz 💗',
+    desc: 'Support me on Sociabuzz 💚',
     icon: '♡',
     url: 'https://sociabuzz.com/angel_yn/tribe',
-    color: '#ff7b9c',
+    color: '#8cff6b',
   },
   {
     name: 'TikTok',
@@ -56,21 +56,26 @@ const socials = [
 function App() {
   return (
     <div className="page">
+
       {/* Background */}
       <div className="background">
         <div className="orb orb-1" />
         <div className="orb orb-2" />
         <div className="orb orb-3" />
+
+        <div className="stars stars-1">✦　✧　✦</div>
+        <div className="stars stars-2">✧　✦　✧</div>
       </div>
 
       <main className="container">
 
         {/* Profile */}
         <div className="profile">
+
           <div className="avatar-wrapper">
             <img
               src="/image.png"
-              alt="Profile"
+              alt="Angelyn Profile"
               className="avatar"
             />
             <span className="online-dot" />
@@ -91,10 +96,12 @@ function App() {
           <div className="social-count">
             <span>♡</span> Thank you for being here!
           </div>
+
         </div>
 
         {/* Social Links */}
         <div className="links">
+
           {socials.map((social, index) => (
             <a
               href={social.url}
@@ -106,6 +113,7 @@ function App() {
                 animationDelay: `${index * 0.12}s`,
               }}
             >
+
               <div
                 className="social-icon"
                 style={{
@@ -121,8 +129,10 @@ function App() {
               </div>
 
               <span className="arrow">↗</span>
+
             </a>
           ))}
+
         </div>
 
         {/* Footer */}
@@ -130,6 +140,7 @@ function App() {
           <p>
             Made with <span>♥</span> and a little magic
           </p>
+
           <small>
             © 2026 Angelyn. All rights reserved.
           </small>
@@ -146,14 +157,27 @@ function App() {
 function Chibi() {
   return (
     <div className="chibi-container">
+
       <div className="chibi-heart heart-1">♥</div>
       <div className="chibi-heart heart-2">♡</div>
       <div className="chibi-sparkle">✦</div>
 
       <div className="chibi">
+
+        {/* Headphones */}
+        <div className="headphone-band" />
+        <div className="headphone ear-left">
+          <span />
+        </div>
+        <div className="headphone ear-right">
+          <span />
+        </div>
+
         {/* Hair */}
         <div className="chibi-hair">
           <div className="hair-bang" />
+          <div className="hair-side hair-side-left" />
+          <div className="hair-side hair-side-right" />
         </div>
 
         {/* Face */}
@@ -178,14 +202,16 @@ function Chibi() {
         {/* Legs */}
         <div className="chibi-leg leg-left" />
         <div className="chibi-leg leg-right" />
+
       </div>
 
       <div className="chibi-shadow" />
 
       <div className="chibi-message">
-        Hello semuanyaa! 🎮💕
+        Hello semuanyaa! 🎮💚
         <span className="message-tail" />
       </div>
+
     </div>
   );
 }

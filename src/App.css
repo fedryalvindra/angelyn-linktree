@@ -17,8 +17,8 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
-  background: #130d20;
-  color: white;
+  background: #071008;
+  color: #f1f5ec;
   overflow-x: hidden;
 }
 
@@ -51,33 +51,28 @@ body {
   position: fixed;
   inset: 0;
   z-index: -1;
-
-  background: linear-gradient(135deg, #171026, #321638, #24183f, #11152e);
-
   overflow: hidden;
-}
 
-/* =========================
-   FLOATING ORBS
-========================= */
+  background:
+    radial-gradient(circle at 15% 20%, #234b20 0%, transparent 35%),
+    radial-gradient(circle at 85% 75%, #183b19 0%, transparent 35%),
+    linear-gradient(135deg, #050b06, #102416, #142b16, #080f09);
+}
 
 .orb {
   position: absolute;
   border-radius: 50%;
   opacity: 0.35;
-
-  filter: blur(55px);
-
+  filter: blur(65px);
+  pointer-events: none;
   will-change: transform;
-  transform: translate3d(0, 0, 0);
-
   animation: float 15s ease-in-out infinite alternate;
 }
 
 .orb-1 {
   width: 300px;
   height: 300px;
-  background: #ec4899;
+  background: #39ff14;
   top: 5%;
   left: -100px;
 }
@@ -85,7 +80,7 @@ body {
 .orb-2 {
   width: 320px;
   height: 320px;
-  background: #9333ea;
+  background: #75b82a;
   right: -120px;
   top: 35%;
   animation-delay: -5s;
@@ -94,7 +89,7 @@ body {
 .orb-3 {
   width: 250px;
   height: 250px;
-  background: #6366f1;
+  background: #a3e635;
   bottom: -100px;
   left: 30%;
   animation-delay: -8s;
@@ -106,15 +101,23 @@ body {
 
 .stars {
   position: absolute;
-  top: 12%;
-  right: 12%;
-
-  color: white;
+  color: #c5ff8c;
   opacity: 0.35;
   letter-spacing: 15px;
-
-  will-change: opacity;
+  font-size: 22px;
+  pointer-events: none;
   animation: sparkle 5s ease-in-out infinite;
+}
+
+.stars-1 {
+  top: 12%;
+  right: 12%;
+}
+
+.stars-2 {
+  bottom: 15%;
+  left: 8%;
+  animation-delay: 2s;
 }
 
 /* =========================
@@ -124,66 +127,53 @@ body {
 .profile {
   text-align: center;
   margin-bottom: 35px;
-
   animation: fadeUp 0.8s ease both;
 }
 
 .avatar-wrapper {
   width: 125px;
   height: 125px;
-
   margin: 0 auto 18px;
   position: relative;
   padding: 5px;
-
   border-radius: 50%;
 
-  background: linear-gradient(135deg, #ff9acb, #c084fc, #818cf8);
+  background: linear-gradient(135deg, #39ff14, #a3e635, #244d20);
 
-  box-shadow: 0 0 25px #e879f940;
+  box-shadow:
+    0 0 20px #39ff1460,
+    0 0 45px #39ff1425;
 }
 
 .avatar {
   width: 100%;
   height: 100%;
-
   border-radius: 50%;
   object-fit: cover;
-
-  border: 3px solid #25152e;
+  border: 3px solid #102010;
 }
 
 .online-dot {
   position: absolute;
-
   width: 17px;
   height: 17px;
-
-  background: #4ade80;
-  border: 3px solid #25152e;
-
+  background: #39ff14;
+  border: 3px solid #102010;
   border-radius: 50%;
-
   bottom: 10px;
   right: 7px;
 }
 
 .creator-tag {
   display: inline-block;
-
   padding: 6px 15px;
-
   font-size: 10px;
   letter-spacing: 2px;
   font-weight: 600;
-
-  color: #ffc4e2;
-
-  background: #ffffff12;
-  border: 1px solid #ffffff25;
-
+  color: #b5ff9b;
+  background: #39ff1415;
+  border: 1px solid #8cff6b50;
   border-radius: 30px;
-
   margin-bottom: 14px;
 }
 
@@ -194,23 +184,20 @@ body {
 }
 
 .bio {
-  color: #d6c8e2;
-
+  color: #c3d5bd;
   font-size: 13px;
   line-height: 1.9;
-
   margin-top: 10px;
 }
 
 .social-count {
   margin-top: 16px;
-
   font-size: 11px;
-  color: #fbcfe8;
+  color: #c5ffad;
 }
 
 .social-count span {
-  color: #fb82bd;
+  color: #39ff14;
 }
 
 /* =========================
@@ -227,25 +214,24 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-
   padding: 15px 17px;
 
   text-decoration: none;
   color: white;
 
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(120, 180, 100, 0.07);
+  border: 1px solid rgba(170, 230, 140, 0.2);
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
-
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
   border-radius: 17px;
 
   transition:
     transform 0.3s ease,
     background-color 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 
   animation: fadeUp 0.6s ease both;
 }
@@ -253,9 +239,10 @@ body {
 .link-card:hover {
   transform: translate3d(0, -4px, 0);
 
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(100, 180, 70, 0.16);
+  border-color: #8cff6b;
 
-  border-color: #f9a8d4;
+  box-shadow: 0 0 20px #39ff1420;
 }
 
 /* =========================
@@ -265,7 +252,6 @@ body {
 .social-icon {
   width: 45px;
   height: 45px;
-
   flex-shrink: 0;
 
   border-radius: 13px;
@@ -276,7 +262,7 @@ body {
   font-size: 22px;
 
   color: var(--icon-color);
-  background: #ffffff13;
+  background: #8cff6b12;
 }
 
 .link-info {
@@ -290,18 +276,13 @@ body {
 
 .link-info p {
   font-size: 10px;
-  color: #c8b8d4;
+  color: #b4c9ad;
   margin-top: 3px;
 }
 
-/* =========================
-   ARROW
-========================= */
-
 .arrow {
   font-size: 19px;
-  color: #d8b4fe;
-
+  color: #a3e635;
   transition: transform 0.3s ease;
 }
 
@@ -316,7 +297,7 @@ body {
 footer {
   text-align: center;
   margin-top: 38px;
-  color: #c9b8d4;
+  color: #a9bba2;
 }
 
 footer p {
@@ -324,7 +305,7 @@ footer p {
 }
 
 footer span {
-  color: #fb82bd;
+  color: #8cff6b;
 }
 
 footer small {
@@ -335,7 +316,7 @@ footer small {
 }
 
 /* =========================
-   ANIMATIONS
+   GENERAL ANIMATIONS
 ========================= */
 
 @keyframes float {
@@ -367,49 +348,7 @@ footer small {
   }
 
   50% {
-    opacity: 0.65;
-  }
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 480px) {
-  .page {
-    padding: 45px 22px;
-  }
-
-  .profile h1 {
-    font-size: 26px;
-  }
-
-  .orb {
-    filter: blur(45px);
-  }
-}
-
-/* =========================
-   TOUCH DEVICES
-========================= */
-
-@media (hover: none) {
-  .link-card:hover {
-    transform: none;
-  }
-}
-
-/* =========================
-   REDUCED MOTION
-========================= */
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
+    opacity: 0.75;
   }
 }
 
@@ -419,14 +358,18 @@ footer small {
 
 .chibi-container {
   position: fixed;
-  bottom: 25px;
-  right: 30px;
-  width: 130px;
-  height: 190px;
+  bottom: 20px;
+  right: 25px;
+
+  width: 105px;
+  height: 165px;
+
   z-index: 10;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   animation: chibiFloat 3s ease-in-out infinite;
 }
 
@@ -438,50 +381,155 @@ footer small {
   height: 150px;
 }
 
-/* Hair */
+/* =========================
+   HAIR
+========================= */
 
 .chibi-hair {
   position: absolute;
+
   width: 76px;
   height: 76px;
-  background: #493047;
+
+  background: linear-gradient(
+    180deg,
+    #80d83b 0%,
+    #39a52b 18%,
+    #171b17 38%,
+    #090d0a 100%
+  );
+
   border-radius: 48% 48% 40% 40%;
+
   top: 5px;
   left: 12px;
-  z-index: 2;
+
+  z-index: 3;
+
+  box-shadow: 0 0 12px #39ff1420;
 }
 
 .hair-bang {
   position: absolute;
+
   width: 48px;
   height: 35px;
-  background: #493047;
+
+  background: linear-gradient(180deg, #8cff45, #4ba832 45%, #171b17 100%);
+
   top: 0;
   left: 10px;
+
   border-radius: 50%;
   transform: rotate(-10deg);
 }
 
-/* Face */
+.hair-side {
+  position: absolute;
+  top: 38px;
+  width: 15px;
+  height: 55px;
+  background: #111611;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.hair-side-left {
+  left: -3px;
+  transform: rotate(10deg);
+}
+
+.hair-side-right {
+  right: -3px;
+  transform: rotate(-10deg);
+}
+
+/* =========================
+   HEADPHONES
+========================= */
+
+.headphone-band {
+  position: absolute;
+  width: 72px;
+  height: 70px;
+
+  top: 0;
+  left: 14px;
+
+  border: 7px solid #101510;
+  border-bottom: none;
+
+  border-radius: 50% 50% 0 0;
+
+  z-index: 2;
+}
+
+.headphone {
+  position: absolute;
+
+  width: 15px;
+  height: 30px;
+
+  background: linear-gradient(90deg, #111811, #455b37, #101510);
+
+  border: 2px solid #090d09;
+  border-radius: 7px;
+
+  top: 35px;
+  z-index: 5;
+
+  display: grid;
+  place-items: center;
+}
+
+.headphone span {
+  width: 5px;
+  height: 12px;
+  background: #8cff6b;
+  border-radius: 5px;
+  opacity: 0.8;
+}
+
+.ear-left {
+  left: 7px;
+}
+
+.ear-right {
+  right: 7px;
+}
+
+/* =========================
+   FACE
+========================= */
 
 .chibi-face {
   position: absolute;
+
   width: 65px;
   height: 63px;
-  background: #ffe0d2;
+
+  background: #f4d4c3;
+
   border-radius: 45% 45% 48% 48%;
+
   top: 25px;
   left: 17px;
-  z-index: 3;
+
+  z-index: 4;
 }
 
 .chibi-eye {
   position: absolute;
+
   width: 6px;
   height: 10px;
-  background: #493047;
+
+  background: #172817;
+
   border-radius: 50%;
+
   top: 28px;
+
   animation: chibiBlink 4s infinite;
 }
 
@@ -495,10 +543,14 @@ footer small {
 
 .chibi-blush {
   position: absolute;
+
   width: 12px;
   height: 6px;
-  background: #f59aaa;
+
+  background: #e88d91;
+
   border-radius: 50%;
+
   top: 39px;
   opacity: 0.7;
 }
@@ -513,46 +565,71 @@ footer small {
 
 .chibi-mouth {
   position: absolute;
+
   width: 8px;
   height: 5px;
+
   border-bottom: 2px solid #b45d70;
+
   border-radius: 50%;
+
   top: 43px;
   left: 28px;
 }
 
-/* Body */
+/* =========================
+   BODY
+========================= */
 
 .chibi-body {
   position: absolute;
+
   top: 83px;
   left: 26px;
+
   z-index: 2;
 }
 
 .chibi-neck {
   width: 17px;
   height: 12px;
-  background: #ffe0d2;
+
+  background: #f4d4c3;
+
   margin: auto;
 }
 
 .chibi-dress {
   width: 49px;
   height: 39px;
-  background: linear-gradient(135deg, #ff9acb, #d78af5);
-  border-radius: 15px 15px 8px 8px;
+
+  background: repeating-linear-gradient(
+    180deg,
+    #19251a 0px,
+    #19251a 9px,
+    #426b35 9px,
+    #426b35 17px
+  );
+
+  border-radius: 12px 12px 7px 7px;
+
   clip-path: polygon(25% 0, 75% 0, 100% 100%, 0 100%);
 }
 
-/* Arms */
+/* =========================
+   ARMS
+========================= */
 
 .chibi-arm {
   position: absolute;
+
   width: 12px;
   height: 34px;
-  background: #ffe0d2;
+
+  background: #f4d4c3;
+
   border-radius: 20px;
+
   top: 86px;
   z-index: 1;
 }
@@ -565,18 +642,26 @@ footer small {
 .arm-right {
   right: 8px;
   top: 75px;
+
   transform-origin: bottom center;
+
   animation: chibiWave 1s ease-in-out infinite alternate;
 }
 
-/* Legs */
+/* =========================
+   LEGS
+========================= */
 
 .chibi-leg {
   position: absolute;
+
   width: 13px;
   height: 23px;
-  background: #ffe0d2;
+
+  background: #f4d4c3;
+
   border-radius: 10px;
+
   top: 120px;
   z-index: 1;
 }
@@ -589,25 +674,39 @@ footer small {
   right: 30px;
 }
 
-/* Shadow */
+/* =========================
+   SHADOW
+========================= */
 
 .chibi-shadow {
   position: absolute;
+
   width: 65px;
   height: 12px;
-  background: #00000030;
-  filter: blur(7px);
+
+  background: #00000080;
+
+  filter: blur(8px);
+
   border-radius: 50%;
+
   bottom: 5px;
+
   animation: chibiShadow 3s ease-in-out infinite;
 }
 
-/* Floating hearts */
+/* =========================
+   HEARTS AND SPARKLES
+========================= */
 
 .chibi-heart {
   position: absolute;
-  color: #ff8fc7;
+
+  color: #8cff6b;
+  text-shadow: 0 0 10px #39ff1460;
+
   font-size: 20px;
+
   animation: heartFloat 3s ease-in-out infinite;
 }
 
@@ -624,28 +723,55 @@ footer small {
 
 .chibi-sparkle {
   position: absolute;
+
   top: 5px;
   left: 10px;
-  color: #ffe5a8;
+
+  color: #c5ff8c;
   font-size: 18px;
+
   animation: sparkle 2s ease-in-out infinite;
 }
 
-/* Message */
+/* =========================
+   MESSAGE
+========================= */
 
 .chibi-message {
   position: absolute;
-  bottom: 0;
+
+  bottom: 5px;
   right: 95px;
+
   white-space: nowrap;
-  padding: 7px 13px;
-  background: #ffffffdd;
-  color: #c45b9c;
+
+  padding: 8px 13px;
+
+  background: #d9f5cb;
+  color: #19351b;
+
   border-radius: 15px;
+
   font-size: 10px;
   font-weight: 600;
-  box-shadow: 0 4px 15px #00000020;
+
+  box-shadow: 0 4px 18px #39ff1425;
+
   animation: messageFloat 3s ease-in-out infinite;
+}
+
+.message-tail {
+  position: absolute;
+
+  right: -5px;
+  bottom: 4px;
+
+  width: 12px;
+  height: 12px;
+
+  background: #d9f5cb;
+
+  transform: rotate(45deg);
 }
 
 /* =========================
@@ -724,12 +850,30 @@ footer small {
   }
 }
 
-/* Mobile */
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
 
 @media (max-width: 480px) {
+  .page {
+    padding: 45px 22px;
+  }
+
+  .profile h1 {
+    font-size: 26px;
+  }
+
+  .orb {
+    filter: blur(45px);
+  }
+
   .chibi-container {
+    width: 85px;
+    height: 125px;
+
     right: 8px;
     bottom: 10px;
+
     transform: scale(0.8);
     transform-origin: bottom right;
   }
@@ -737,16 +881,945 @@ footer small {
   .chibi-message {
     display: none;
   }
+
+  .link-card {
+    padding: 13px 14px;
+  }
 }
 
-/* Reduced motion */
+/* =========================
+   TOUCH DEVICES
+========================= */
+
+@media (hover: none) {
+  .link-card:hover {
+    transform: none;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .chibi-container,
-  .chibi *,
-  .chibi-heart,
-  .chibi-shadow,
-  .chibi-message {
+  *,
+  *::before,
+  *::after {
     animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: #071008;
+  color: #f1f5ec;
+  overflow-x: hidden;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 55px 20px;
+  isolation: isolate;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 15% 20%, #234b20 0%, transparent 35%),
+    radial-gradient(circle at 85% 75%, #183b19 0%, transparent 35%),
+    linear-gradient(135deg, #050b06, #102416, #142b16, #080f09);
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.35;
+  filter: blur(65px);
+  pointer-events: none;
+  will-change: transform;
+  animation: float 15s ease-in-out infinite alternate;
+}
+
+.orb-1 {
+  width: 300px;
+  height: 300px;
+  background: #39ff14;
+  top: 5%;
+  left: -100px;
+}
+
+.orb-2 {
+  width: 320px;
+  height: 320px;
+  background: #75b82a;
+  right: -120px;
+  top: 35%;
+  animation-delay: -5s;
+}
+
+.orb-3 {
+  width: 250px;
+  height: 250px;
+  background: #a3e635;
+  bottom: -100px;
+  left: 30%;
+  animation-delay: -8s;
+}
+
+/* =========================
+   STARS
+========================= */
+
+.stars {
+  position: absolute;
+  color: #c5ff8c;
+  opacity: 0.35;
+  letter-spacing: 15px;
+  font-size: 22px;
+  pointer-events: none;
+  animation: sparkle 5s ease-in-out infinite;
+}
+
+.stars-1 {
+  top: 12%;
+  right: 12%;
+}
+
+.stars-2 {
+  bottom: 15%;
+  left: 8%;
+  animation-delay: 2s;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile {
+  text-align: center;
+  margin-bottom: 35px;
+  animation: fadeUp 0.8s ease both;
+}
+
+.avatar-wrapper {
+  width: 125px;
+  height: 125px;
+  margin: 0 auto 18px;
+  position: relative;
+  padding: 5px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #39ff14, #a3e635, #244d20);
+
+  box-shadow:
+    0 0 20px #39ff1460,
+    0 0 45px #39ff1425;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #102010;
+}
+
+.online-dot {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  background: #39ff14;
+  border: 3px solid #102010;
+  border-radius: 50%;
+  bottom: 10px;
+  right: 7px;
+}
+
+.creator-tag {
+  display: inline-block;
+  padding: 6px 15px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #b5ff9b;
+  background: #39ff1415;
+  border: 1px solid #8cff6b50;
+  border-radius: 30px;
+  margin-bottom: 14px;
+}
+
+.profile h1 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.bio {
+  color: #c3d5bd;
+  font-size: 13px;
+  line-height: 1.9;
+  margin-top: 10px;
+}
+
+.social-count {
+  margin-top: 16px;
+  font-size: 11px;
+  color: #c5ffad;
+}
+
+.social-count span {
+  color: #39ff14;
+}
+
+/* =========================
+   SOCIAL LINKS
+========================= */
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 17px;
+
+  text-decoration: none;
+  color: white;
+
+  background: rgba(120, 180, 100, 0.07);
+  border: 1px solid rgba(170, 230, 140, 0.2);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 17px;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  animation: fadeUp 0.6s ease both;
+}
+
+.link-card:hover {
+  transform: translate3d(0, -4px, 0);
+
+  background: rgba(100, 180, 70, 0.16);
+  border-color: #8cff6b;
+
+  box-shadow: 0 0 20px #39ff1420;
+}
+
+/* =========================
+   SOCIAL ICON
+========================= */
+
+.social-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+
+  border-radius: 13px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 22px;
+
+  color: var(--icon-color);
+  background: #8cff6b12;
+}
+
+.link-info {
+  flex: 1;
+}
+
+.link-info h3 {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.link-info p {
+  font-size: 10px;
+  color: #b4c9ad;
+  margin-top: 3px;
+}
+
+.arrow {
+  font-size: 19px;
+  color: #a3e635;
+  transition: transform 0.3s ease;
+}
+
+.link-card:hover .arrow {
+  transform: translate3d(3px, -3px, 0);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+  margin-top: 38px;
+  color: #a9bba2;
+}
+
+footer p {
+  font-size: 11px;
+}
+
+footer span {
+  color: #8cff6b;
+}
+
+footer small {
+  display: block;
+  font-size: 9px;
+  margin-top: 7px;
+  opacity: 0.6;
+}
+
+/* =========================
+   GENERAL ANIMATIONS
+========================= */
+
+@keyframes float {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(30px, -25px, 0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.75;
+  }
+}
+
+/* =========================
+   CHIBI CHARACTER
+========================= */
+
+.chibi-container {
+  position: fixed;
+  bottom: 20px;
+  right: 25px;
+
+  width: 105px;
+  height: 165px;
+
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: chibiFloat 3s ease-in-out infinite;
+}
+
+/* Character */
+
+.chibi {
+  position: relative;
+  width: 100px;
+  height: 150px;
+}
+
+/* =========================
+   HAIR
+========================= */
+
+.chibi-hair {
+  position: absolute;
+
+  width: 76px;
+  height: 76px;
+
+  background: linear-gradient(
+    180deg,
+    #80d83b 0%,
+    #39a52b 18%,
+    #171b17 38%,
+    #090d0a 100%
+  );
+
+  border-radius: 48% 48% 40% 40%;
+
+  top: 5px;
+  left: 12px;
+
+  z-index: 3;
+
+  box-shadow: 0 0 12px #39ff1420;
+}
+
+.hair-bang {
+  position: absolute;
+
+  width: 48px;
+  height: 35px;
+
+  background: linear-gradient(180deg, #8cff45, #4ba832 45%, #171b17 100%);
+
+  top: 0;
+  left: 10px;
+
+  border-radius: 50%;
+  transform: rotate(-10deg);
+}
+
+.hair-side {
+  position: absolute;
+  top: 38px;
+  width: 15px;
+  height: 55px;
+  background: #111611;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.hair-side-left {
+  left: -3px;
+  transform: rotate(10deg);
+}
+
+.hair-side-right {
+  right: -3px;
+  transform: rotate(-10deg);
+}
+
+/* =========================
+   HEADPHONES
+========================= */
+
+.headphone-band {
+  position: absolute;
+  width: 72px;
+  height: 70px;
+
+  top: 0;
+  left: 14px;
+
+  border: 7px solid #101510;
+  border-bottom: none;
+
+  border-radius: 50% 50% 0 0;
+
+  z-index: 2;
+}
+
+.headphone {
+  position: absolute;
+
+  width: 15px;
+  height: 30px;
+
+  background: linear-gradient(90deg, #111811, #455b37, #101510);
+
+  border: 2px solid #090d09;
+  border-radius: 7px;
+
+  top: 35px;
+  z-index: 5;
+
+  display: grid;
+  place-items: center;
+}
+
+.headphone span {
+  width: 5px;
+  height: 12px;
+  background: #8cff6b;
+  border-radius: 5px;
+  opacity: 0.8;
+}
+
+.ear-left {
+  left: 7px;
+}
+
+.ear-right {
+  right: 7px;
+}
+
+/* =========================
+   FACE
+========================= */
+
+.chibi-face {
+  position: absolute;
+
+  width: 65px;
+  height: 63px;
+
+  background: #f4d4c3;
+
+  border-radius: 45% 45% 48% 48%;
+
+  top: 25px;
+  left: 17px;
+
+  z-index: 4;
+}
+
+.chibi-eye {
+  position: absolute;
+
+  width: 6px;
+  height: 10px;
+
+  background: #172817;
+
+  border-radius: 50%;
+
+  top: 28px;
+
+  animation: chibiBlink 4s infinite;
+}
+
+.eye-left {
+  left: 17px;
+}
+
+.eye-right {
+  right: 17px;
+}
+
+.chibi-blush {
+  position: absolute;
+
+  width: 12px;
+  height: 6px;
+
+  background: #e88d91;
+
+  border-radius: 50%;
+
+  top: 39px;
+  opacity: 0.7;
+}
+
+.blush-left {
+  left: 5px;
+}
+
+.blush-right {
+  right: 5px;
+}
+
+.chibi-mouth {
+  position: absolute;
+
+  width: 8px;
+  height: 5px;
+
+  border-bottom: 2px solid #b45d70;
+
+  border-radius: 50%;
+
+  top: 43px;
+  left: 28px;
+}
+
+/* =========================
+   BODY
+========================= */
+
+.chibi-body {
+  position: absolute;
+
+  top: 83px;
+  left: 26px;
+
+  z-index: 2;
+}
+
+.chibi-neck {
+  width: 17px;
+  height: 12px;
+
+  background: #f4d4c3;
+
+  margin: auto;
+}
+
+.chibi-dress {
+  width: 49px;
+  height: 39px;
+
+  background: repeating-linear-gradient(
+    180deg,
+    #19251a 0px,
+    #19251a 9px,
+    #426b35 9px,
+    #426b35 17px
+  );
+
+  border-radius: 12px 12px 7px 7px;
+
+  clip-path: polygon(25% 0, 75% 0, 100% 100%, 0 100%);
+}
+
+/* =========================
+   ARMS
+========================= */
+
+.chibi-arm {
+  position: absolute;
+
+  width: 12px;
+  height: 34px;
+
+  background: #f4d4c3;
+
+  border-radius: 20px;
+
+  top: 86px;
+  z-index: 1;
+}
+
+.arm-left {
+  left: 17px;
+  transform: rotate(25deg);
+}
+
+.arm-right {
+  right: 8px;
+  top: 75px;
+
+  transform-origin: bottom center;
+
+  animation: chibiWave 1s ease-in-out infinite alternate;
+}
+
+/* =========================
+   LEGS
+========================= */
+
+.chibi-leg {
+  position: absolute;
+
+  width: 13px;
+  height: 23px;
+
+  background: #f4d4c3;
+
+  border-radius: 10px;
+
+  top: 120px;
+  z-index: 1;
+}
+
+.leg-left {
+  left: 34px;
+}
+
+.leg-right {
+  right: 30px;
+}
+
+/* =========================
+   SHADOW
+========================= */
+
+.chibi-shadow {
+  position: absolute;
+
+  width: 65px;
+  height: 12px;
+
+  background: #00000080;
+
+  filter: blur(8px);
+
+  border-radius: 50%;
+
+  bottom: 5px;
+
+  animation: chibiShadow 3s ease-in-out infinite;
+}
+
+/* =========================
+   HEARTS AND SPARKLES
+========================= */
+
+.chibi-heart {
+  position: absolute;
+
+  color: #8cff6b;
+  text-shadow: 0 0 10px #39ff1460;
+
+  font-size: 20px;
+
+  animation: heartFloat 3s ease-in-out infinite;
+}
+
+.heart-1 {
+  top: 20px;
+  right: 0;
+}
+
+.heart-2 {
+  top: 60px;
+  left: 0;
+  animation-delay: 1s;
+}
+
+.chibi-sparkle {
+  position: absolute;
+
+  top: 5px;
+  left: 10px;
+
+  color: #c5ff8c;
+  font-size: 18px;
+
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.chibi-message {
+  position: absolute;
+
+  bottom: 5px;
+  right: 95px;
+
+  white-space: nowrap;
+
+  padding: 8px 13px;
+
+  background: #d9f5cb;
+  color: #19351b;
+
+  border-radius: 15px;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  box-shadow: 0 4px 18px #39ff1425;
+
+  animation: messageFloat 3s ease-in-out infinite;
+}
+
+.message-tail {
+  position: absolute;
+
+  right: -5px;
+  bottom: 4px;
+
+  width: 12px;
+  height: 12px;
+
+  background: #d9f5cb;
+
+  transform: rotate(45deg);
+}
+
+/* =========================
+   CHIBI ANIMATIONS
+========================= */
+
+@keyframes chibiFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes chibiWave {
+  from {
+    transform: rotate(-35deg);
+  }
+
+  to {
+    transform: rotate(35deg);
+  }
+}
+
+@keyframes chibiBlink {
+  0%,
+  45%,
+  48%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  46%,
+  47% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes chibiShadow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: scale(0.7);
+    opacity: 0.15;
+  }
+}
+
+@keyframes heartFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(-12px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes messageFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .page {
+    padding: 45px 22px;
+  }
+
+  .profile h1 {
+    font-size: 26px;
+  }
+
+  .orb {
+    filter: blur(45px);
+  }
+
+  .chibi-container {
+    width: 85px;
+    height: 125px;
+
+    right: 8px;
+    bottom: 10px;
+
+    transform: scale(0.8);
+    transform-origin: bottom right;
+  }
+
+  .chibi-message {
+    display: none;
+  }
+
+  .link-card {
+    padding: 13px 14px;
+  }
+}
+
+/* =========================
+   TOUCH DEVICES
+========================= */
+
+@media (hover: none) {
+  .link-card:hover {
+    transform: none;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
